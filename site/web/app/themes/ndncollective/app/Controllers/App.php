@@ -11,15 +11,6 @@ class App extends Controller
         return get_bloginfo('name');
     }
 
-    public function siteAdminNotice()
-    {
-        if (is_blog_admin()) {
-            return "you are an admin.";
-        } else {
-            return "you are not an admin";
-        }
-    }
-
     public static function title()
     {
         if (is_home()) {

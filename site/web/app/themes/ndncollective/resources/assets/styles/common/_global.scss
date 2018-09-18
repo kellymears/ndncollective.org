@@ -1,0 +1,25 @@
+body {
+  h1,
+  h2 {
+    @include brand-typography-headline();
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include brand-typography-subheadline();
+  }
+
+  p,
+  ul li,
+  ol li,
+  table tr td {
+    @include brand-typography-body();
+  }
+
+  a {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}

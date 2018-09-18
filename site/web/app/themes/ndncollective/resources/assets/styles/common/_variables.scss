@@ -1,5 +1,35 @@
+/** Imports */
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,600i,700');
+
 /** Colors */
-$brand-primary:         #525ddc;
+$brand-primary: rgba(218, 41, 28, 1);
+$brand-secondary: rgba(151, 153, 155, 1);
+$brand-secondary-light: rgba(208, 208, 206, 1);
+$brand-secondary-dark: rgba(99, 102, 106, 1);
+
+$brand-black: rgba(16, 24, 32, 1);
+$brand-white: rgba(255, 255, 255, 1);
 
 /** Box Model  */
-$spacer:                2rem;
+$spacer: 2rem;
+
+/** Fonts */
+$brand-display-font:     'Fjalla One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+$brand-subheadline-font: 'Montserrat', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+$brand-body-font:        'Vollkorn', Georgia, 'Times New Roman', Times, serif;
+
+/** Typography */
+@mixin brand-typography-headline {
+  font-family: $brand-display-font;
+  text-transform: uppercase;
+}
+
+@mixin brand-typography-subheadline {
+  font-family: $brand-subheadline-font;
+}
+
+@mixin brand-typography-body {
+  font-family: $brand-body-font;
+}
