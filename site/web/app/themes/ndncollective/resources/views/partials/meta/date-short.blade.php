@@ -1,0 +1,1 @@
+<time class="updated" datetime="{{ get_the_date('c') }}">{{ get_the_date('d M Y') }}</time>

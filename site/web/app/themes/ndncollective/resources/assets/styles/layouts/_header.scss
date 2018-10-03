@@ -1,7 +1,63 @@
-.banner {
-  .brand {
-    @include brand-typography-headline;
+nav.columns {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 0 auto;
+  max-width: 1100px;
 
-    text-transform: uppercase;
+  .navbar-item {
+    @include brand-typography-headline();
+
+    @extend .hvr-underline-reveal;
+
+    display: inherit;
+    font-size: ($brand-atomic-font*0.9);
+    padding: 0.5rem 0 0.5rem 0 !important;
+    color: $brand-white;
+    transition-property: all;
+    transition-duration: 300ms;
+
+    &:hover {
+      background: none;
+      color: $brand-primary;
+    }
+
+    &::before {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      height: 2px;
+      background-color: $brand-white !important;
+    }
+  }
+
+  .brand {
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    padding: 1rem ($half-spacer) 0.5rem ($half-spacer);
+    background: $brand-primary-transparent;
+    max-height: 10rem;
+
+    @include mobile {
+      padding: $half-spacer ($third-spacer/2) 0 ($third-spacer/2);
+      background: transparent;
+
+      img {
+        margin-bottom: 0;
+        max-height: 6rem;
+      }
+    }
+  }
+
+  .right-nav {
+    padding-left: 1.5rem;
+    text-align: center;
+  }
+
+  .left-nav {
+    padding-right: 1.5rem;
+    text-align: center;
   }
 }

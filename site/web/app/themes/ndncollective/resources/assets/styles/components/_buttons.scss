@@ -1,0 +1,171 @@
+.base-button {
+  @extend .button;
+
+  @include brand-typography-headline;
+  @include animated;
+
+  height: auto;
+  padding: ($third-spacer/3) $spacer ($third-spacer/3) $spacer;
+  border-radius: 0;
+  font-size: $brand-micro-font;
+  box-shadow: none;
+  letter-spacing: 0.1rem;
+}
+
+.ndn-button {
+  @extend .base-button;
+
+  border: 3px solid $brand-primary;
+  border-radius: 0;
+  color: $brand-black;
+  background: transparent;
+
+  &:hover {
+    @include animated;
+
+    border-color: $brand-primary;
+    background-color: $brand-primary;
+    color: $brand-white;
+  }
+
+  &:focus {
+    @include animated;
+
+    @extend .hvr-ripple-out;
+
+    background-color: $brand-black;
+    color: $brand-white;
+    border: 3px solid $brand-black;
+    box-shadow: none !important;
+
+    &::before {
+      box-shadow: none !important;
+      border: 3px solid $brand-black;
+    }
+  }
+
+  &:active {
+    box-shadow: none !important;
+    border: 3px solid $brand-black !important;
+    background-color: $brand-black;
+
+    &::before {
+      box-shadow: none !important;
+      border: 0 solid $brand-black !important;
+      background-color: $brand-black;
+    }
+  }
+}
+
+.strong-button {
+  @extend .base-button;
+
+  border: 3px solid $brand-primary;
+  font-size: $brand-micro-font;
+  background-color: $brand-primary;
+  color: $brand-white;
+
+  svg {
+    height: 10px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+
+    * {
+      fill: $brand-white;
+    }
+  }
+
+  &::before {
+    box-shadow: none;
+    border: 3px solid $brand-primary !important;
+  }
+
+  &:hover {
+    @include animated;
+
+    border-color: $brand-primary;
+    background-color: $brand-white;
+    color: $brand-black !important;
+
+    svg {
+      height: 10px;
+      margin-bottom: 2px;
+      margin-left: 5px;
+
+      path {
+        fill: $brand-black;
+      }
+    }
+
+    &::before {
+      box-shadow: none;
+      border: 3px solid $brand-primary !important;
+    }
+  }
+
+  &:focus {
+    @include animated;
+
+    @extend .hvr-ripple-out;
+
+    background-color: $brand-white;
+    color: $brand-black;
+    border: 3px solid $brand-secondary;
+    box-shadow: none;
+
+    svg {
+      height: 10px;
+      margin-bottom: 1px;
+      margin-left: 0;
+
+      path {
+        fill: $brand-black;
+      }
+    }
+
+    &::before {
+      box-shadow: none !important;
+      border: 3px solid $brand-white !important;
+    }
+  }
+}
+
+.control .button {
+  @extend .button;
+
+  @include brand-typography-headline;
+
+  background: $brand-black;
+  color: $brand-white;
+  letter-spacing: 0.1;
+  font-size: $brand-micro-font;
+}
+
+.button.black,
+.black-button {
+  @extend .ndn-button;
+
+  background-color: $brand-black;
+  color: $brand-white !important;
+  border: 0;
+  box-shadow: none;
+}
+
+button.read-more {
+  @include animated(1s);
+
+  padding: 0;
+  border: 0;
+  font-family: $brand-default-font;
+  font-size: $brand-atomic-font;
+  font-weight: $weight-normal;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: $brand-primary;
+
+  &:hover {
+    @include animated(1s);
+
+    color: $brand-black;
+  }
+}

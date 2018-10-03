@@ -1,0 +1,37 @@
+footer.footer {
+  padding: $spacer;
+  background: $brand-black;
+
+  .brand-container {
+    padding: $third-spacer;
+
+    svg {
+      width: 80%;
+    }
+  }
+
+  .menu-container {
+    h3 {
+      @extend .is-5;
+
+      margin-bottom: 0.5rem;
+      color: $brand-primary;
+    }
+
+    ul li a {
+      @extend .hvr-underline-from-left;
+
+      @include animated;
+
+      font-size: $brand-micro-font;
+      font-family: $brand-display-font;
+      text-transform: uppercase;
+      color: $brand-white;
+
+      &::before {
+        background: $brand-white;
+        height: 2px;
+      }
+    }
+  }
+}

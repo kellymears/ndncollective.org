@@ -1,0 +1,95 @@
+.header {
+  @include ndn-overlay($brand-black, 0.7);
+
+  background-size: cover;
+  position: relative;
+
+  &:hover {
+    @include ndn-overlay($brand-black, 0.9);
+  }
+
+  .hero {
+    @include mobile {
+      padding: $third-spacer 0 $half-spacer 0;
+    }
+
+    @include tablet {
+      padding: $third-spacer 0 $double-spacer 0;
+    }
+
+    .hero-body {
+      @include mobile {
+        padding-top: 1rem;
+      }
+
+      position: relative;
+      z-index: 1;
+
+      .title,
+      .subtitle {
+        @include desktop {
+          padding-left: $spacer;
+          padding-right: $spacer;
+        }
+
+        text-align: center;
+        color: $brand-white;
+      }
+
+      .title {
+        @include tablet {
+          font-size: $brand-monolithic-font;
+        }
+
+        padding-bottom: $half-spacer;
+        font-weight: $weight-normal;
+      }
+
+      .subtitle {
+        @include brand-typography-body;
+
+        margin-bottom: 0;
+        padding-bottom: $half-spacer+0.25rem;
+        font-size: $brand-small-font;
+        text-transform: none;
+      }
+
+      .updated {
+        color: $brand-white;
+        margin-bottom: $spacer;
+      }
+
+      button {
+        @extend .strong-button;
+      }
+    }
+  }
+
+  .credit {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.5rem;
+    color: $brand-white;
+    font-family: $brand-default-font;
+    font-size: $brand-atomic-font;
+    font-style: italic;
+  }
+}
+
+.podcast-header {
+  @include ndn-overlay($brand-white, 0.7);
+
+  z-index: -1;
+  position: relative;
+
+  .hero {
+    z-index: 1;
+    position: relative;
+
+    .hero-body {
+      .subtitle {
+        color: $brand-black;
+      }
+    }
+  }
+}

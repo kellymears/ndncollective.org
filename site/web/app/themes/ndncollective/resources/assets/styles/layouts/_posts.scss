@@ -1,0 +1,15 @@
+.post-content {
+  margin: $spacer $half-spacer $spacer $half-spacer;
+
+  p {
+    margin-bottom: ($spacer/2);
+  }
+
+  .wp-block-pullquote {
+    padding: $half-spacer 0 $half-spacer 0;
+
+    p {
+      font-size: $brand-standard-font;
+    }
+  }
+}

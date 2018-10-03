@@ -1,0 +1,8 @@
+.reading-progress {
+  background: linear-gradient(to right, $brand-primary var(--scroll), transparent 0);
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  z-index: 1;
+}

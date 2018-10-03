@@ -1,0 +1,53 @@
+section.podcast {
+  @extend .section;
+
+  .podcast-bounds {
+    @extend .container;
+  }
+
+  .subscribe,
+  .listen {
+    @extend .columns;
+  }
+
+  .call-to-action,
+  .episode {
+    @extend .column;
+  }
+
+  .call-to-action {
+    .content {
+      text-align: center;
+
+      .card {
+        padding-top: $half-spacer;
+        padding-bottom: $half-spacer;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: none;
+        border: 0;
+      }
+    }
+  }
+
+  h2 {
+    @extend .is-2;
+
+    font-weight: $weight-light;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  button {
+    @extend .ndn-button;
+
+    margin-top: 1rem;
+  }
+}

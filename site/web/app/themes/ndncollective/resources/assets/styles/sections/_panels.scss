@@ -1,0 +1,114 @@
+section.panels {
+  @extend .section;
+
+  @include mobile {
+    padding-top: 0;
+  }
+
+  .panels-bounds {
+    @extend .container;
+  }
+
+  .pairing {
+    @extend .columns;
+    @extend .is-variable;
+    @extend .is-8;
+  }
+
+  .left-panel {
+    @include tablet {
+      padding: $double-spacer $double-spacer $double-spacer $spacer !important;
+    }
+  }
+
+  .right-panel {
+    @include tablet {
+      padding: $double-spacer $spacer $double-spacer $double-spacer !important;
+    }
+  }
+
+  .call-to-action {
+    @include mobile {
+      background-color: $brand-primary;
+      text-align: center;
+    }
+
+    @include tablet {
+      padding-right: $third-spacer;
+    }
+  }
+
+  .teaser {
+    text-align: center;
+
+    @include tablet {
+      padding-left: $third-spacer;
+    }
+  }
+
+  .call-to-action,
+  .teaser {
+    @extend .column;
+
+    @include mobile {
+      padding-top: $spacer;
+      padding-bottom: $spacer;
+    }
+
+    h3.panel-title {
+      @extend .is-3;
+
+      font-weight: $weight-light;
+      color: $brand-black;
+      margin-bottom: ($third-spacer/2) !important;
+    }
+
+    span {
+      display: block;
+      margin-bottom: ($third-spacer/2);
+      font-family: $brand-display-font;
+      font-weight: $weight-light;
+      letter-spacing: 0.1rem;
+      color: $brand-black-soft;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: $brand-micro-font;
+      margin-bottom: ($third-spacer/2);
+      color: $brand-black;
+    }
+
+    .field {
+      @include tablet {
+        justify-content: left;
+      }
+
+      margin-top: $third-spacer;
+      border: 0;
+
+      .input,
+      .button {
+        border-radius: 0;
+        border-color: transparent;
+      }
+    }
+
+    .read-more {
+      margin-top: $third-spacer;
+    }
+  }
+}
+
+.split-panels {
+  @include tablet {
+    background: linear-gradient(90deg, $brand-primary 50%, $brand-white 50%);
+    padding-top: $double-spacer;
+    padding-bottom: $double-spacer;
+  }
+
+  @include mobile {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,46 @@
+@import 'intro';
+@import 'podcast';
+@import 'highlights';
+@import 'interlude';
+@import 'panels';
+
+main {
+  position: relative;
+}
+
+section.intro,
+section.podcast,
+section.highlights,
+section.interlude {
+  padding-top: $double-spacer;
+  padding-bottom: $double-spacer;
+
+  @include mobile {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+}
+
+section.intro,
+section.recent,
+section.highlights {
+  h2 {
+    @extend .is-2;
+  }
+
+  h3 {
+    @extend .is-4;
+
+    margin-bottom: $third-spacer;
+  }
+
+  p {
+    margin-bottom: $third-spacer;
+  }
+}
+
+section.recent {
+  @extend .section;
+
+  background: $brand-secondary-light;
+}

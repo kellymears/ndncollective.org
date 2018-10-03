@@ -1,25 +1,90 @@
+@include mobile {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include tablet {
+  html {
+    font-size: 21px;
+  }
+}
+
+@include desktop {
+  html {
+    font-size: 22px;
+  }
+}
+
 body {
   h1,
-  h2 {
-    @include brand-typography-headline();
-  }
-
+  h2,
   h3,
   h4,
   h5,
   h6 {
-    @include brand-typography-subheadline();
+    @extend .title;
+
+    @include brand-typography-headline();
+
+    color: $brand-black;
   }
 
-  p,
-  ul li,
-  ol li,
-  table tr td {
-    @include brand-typography-body();
+  h1 {
+    @extend .is-2;
+  }
+
+  h2 {
+    @extend .is-4;
+  }
+
+  h3 {
+    @extend .is-5;
+
+    margin-bottom: ($third-spacer/3);
+    font-weight: 500;
+  }
+
+  h4 {
+    @extend .is-5;
+  }
+
+  h5 {
+    @extend .is-6;
+  }
+
+  h6 {
+    @extend .is-7;
+  }
+
+  p {
+    font-size: $brand-micro-font;
+    margin-bottom: ($third-spacer/2);
+    color: $brand-secondary-darker;
   }
 
   a {
-    color: $brand-primary;
     text-decoration: none;
+
+    @include animated(1s);
+  }
+
+  time,
+  .card span {
+    @include brand-typography-headline();
+
+    display: block;
+    padding-bottom: 0.25rem;
+    color: $brand-black-soft;
+    letter-spacing: 0.15rem;
+    font-size: $brand-micro-font;
+    font-weight: $weight-medium;
+    text-transform: uppercase;
+  }
+
+  .input,
+  .button {
+    font-family: $brand-display-font;
+    font-size: $brand-atomic-font;
   }
 }

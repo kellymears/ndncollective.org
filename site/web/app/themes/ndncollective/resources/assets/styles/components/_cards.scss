@@ -1,0 +1,74 @@
+.card {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 30rem;
+
+  .card-image {
+    @include animated(5s);
+    @include ndn-overlay($brand-black, 0.6);
+
+    height: 10rem;
+    max-height: 10rem;
+    max-width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+
+    img {
+      margin-bottom: ($third-spacer/1.25);
+    }
+  }
+
+  &:hover {
+    .card-image {
+      @include animated(5s);
+      @include ndn-overlay($brand-black, 0.2);
+
+      transform: scale(1.2);
+
+      &::after {
+        @include animated(5s);
+      }
+    }
+  }
+
+  a {
+    overflow: hidden;
+    max-height: 10rem;
+  }
+
+  .card-content {
+    z-index: 5;
+    position: relative;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $brand-black;
+
+      @include animated(500ms);
+    }
+
+    .entry-title {
+      font-size: $brand-micro-font;
+    }
+
+    p {
+      font-size: $brand-atomic-font;
+    }
+
+    time {
+      font-size: $brand-atomic-font;
+    }
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding: 0 0 2rem 1.5rem;
+  }
+}

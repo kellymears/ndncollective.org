@@ -1,0 +1,36 @@
+section.highlights {
+  @extend .section;
+
+  .highlights-bounds {
+    @extend .container;
+  }
+
+  .all-highlights {
+    @extend .columns;
+  }
+
+  .highlight-list {
+    @extend .column;
+    @extend .is-half;
+
+    h3 {
+      margin-bottom: ($third-spacer);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .featured {
+    @include tablet {
+      padding-right: $spacer;
+    }
+
+    margin-bottom: ($third-spacer);
+
+    img {
+      border-left: ($spacer/4) solid $brand-primary;
+    }
+  }
+}

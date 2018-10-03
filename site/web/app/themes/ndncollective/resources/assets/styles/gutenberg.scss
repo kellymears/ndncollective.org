@@ -1,0 +1,96 @@
+/** Imports */
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,600i,700');
+
+$brand-display-font:     'Fjalla One', Impact,  'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+$brand-subheadline-font: 'Montserrat', Impact,  'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+$brand-body-font:        'Vollkorn',   Georgia, 'Times New Roman',  Times,               serif;
+$brand-default-font:     'Helvetica',  'Arial Narrow Bold',         serif;
+
+$brand-monolithic-font: 3rem;
+$brand-macro-font:      2.5rem;
+$brand-large-font:      2rem;
+$brand-standard-font:   1.5rem;
+$brand-small-font:      1.25rem;
+$brand-micro-font:      1rem;
+$brand-atomic-font:     0.75rem;
+
+/** Box Model  */
+$spacer:        3rem;
+$third-spacer:  ($spacer/3);
+$half-spacer:   ($spacer/2);
+$double-spacer: ($spacer*2);
+$triple-spacer: ($spacer*3);
+
+/** Colors */
+$brand-primary:             rgb(218, 41, 28);
+$brand-primary-transparent: rgba(218, 41, 28, 0.7);
+$brand-secondary:           rgba(151, 153, 155, 1);
+$brand-secondary-light:     rgba(208, 208, 206, 1);
+$brand-secondary-lighter:   rgba(219, 219, 219, 1);
+$brand-secondary-dark:      rgba(99, 102, 106, 1);
+$brand-secondary-darker:    rgba(73, 73, 73, 1);
+$brand-black:               rgba(16, 24, 32, 1);
+$brand-black-soft:          rgba(25, 25, 25, 1);
+$brand-black-softer:        rgba(39, 39, 39, 1);
+$brand-white:               rgba(255, 255, 255, 1);
+$brand-white-soft:          rgba(244, 244, 244, 1);
+$brand-white-softer:        rgba(244, 244, 244, 1);
+
+@mixin brand-typography-headline {
+  font-family: $brand-display-font;
+  color: $brand-black;
+  text-transform: uppercase;
+}
+
+@mixin brand-typography-subheadline {
+  font-family: $brand-subheadline-font;
+}
+
+@mixin brand-typography-body {
+  font-family: $brand-body-font;
+}
+
+.edit-post-visual-editor {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  cite {
+    @include brand-typography-headline;
+  }
+
+  p,
+  ul li,
+  ol li {
+    @include brand-typography-body;
+  }
+
+  .editor-post-title__block,
+  .editor-post-title__block *,
+  .wp-block-heading,
+  .wp-block-heading * {
+    @include brand-typography-headline;
+  }
+
+  .wp-block-paragraph {
+    @include brand-typography-body;
+  }
+
+  .wp-block-button *,
+  .wp-block-button__link * {
+    background: $brand-primary;
+    color: $brand-white;
+  }
+
+  .wp-blockquote-pullquote p {
+    @include brand-typography-body;
+  }
+
+  .wp-block-pullquote cite * {
+    @include brand-typography-headline;
+  }
+}

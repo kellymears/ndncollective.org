@@ -13,6 +13,12 @@ add_filter('body_class', function (array $classes) {
         }
     }
 
+    if ( is_single () ) {
+      if (! in_array ( 'post', $classes ) ) {
+        $classes[] = 'post';
+      }
+    }
+
     /** Add class if sidebar is active */
     if (display_sidebar()) {
         $classes[] = 'sidebar-primary';
@@ -80,3 +86,60 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+
+/**
+ * 
+ * @author pixeline
+ * @link https://github.com/eddiemachado/bones/issues/90
+ *
+ */ 
+
+/*  Remove Width/Height attributes from images, for easier image responsivity. */
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'img_caption_shortcode', 'remove_thumbnail_dimensions');
+add_filter( 'wp_caption', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'caption', 'remove_thumbnail_dimensions', 10 );
+
+function remove_thumbnail_dimensions( $html ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+
+// HTML5: Use figure and figcaption for captions
+function html5_caption($attr, $content = null) {
+    $output = apply_filters( 'img_caption_shortcode', '', $attr, $content );
+    if ( $output != '' )
+        return $output;
+
+    extract( shortcode_atts ( array(
+    'id' => '',
+    'align' => 'alignnone',
+    'width'=> '',
+    'caption' => ''
+    ), $attr ) );
+
+    if ( 1 > (int) $width || empty( $caption ) )
+        return $content;
+
+    if ( $id ) $id = 'id="' . $id . '" ';
+
+    return '<figure ' . $id . 'class="wp-caption ' . $align . '" ><figcaption class="wp-caption-text">' . $caption . '</figcaption>'. do_shortcode( $content ) . '</figure>';
+}
+
+add_filter('bladesvg_image_path', function () {
+    return \BladeSvgSage\get_dist_path('images/svg');
+});
+
+add_filter('bladesvg_inline', function () {
+    return true;
+});
+
+add_filter('bladesvg_class', function () {
+    return 'svg';
+});
+
+add_filter('bladesvg_sprite_prefix', function () {
+    return '';
+});

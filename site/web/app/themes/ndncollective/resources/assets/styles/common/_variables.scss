@@ -3,26 +3,24 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
 @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,600i,700');
 
-/** Colors */
-$brand-primary: rgba(218, 41, 28, 1);
-$brand-secondary: rgba(151, 153, 155, 1);
-$brand-secondary-light: rgba(208, 208, 206, 1);
-$brand-secondary-dark: rgba(99, 102, 106, 1);
-
-$brand-black: rgba(16, 24, 32, 1);
-$brand-white: rgba(255, 255, 255, 1);
-
-/** Box Model  */
-$spacer: 2rem;
-
 /** Fonts */
-$brand-display-font:     'Fjalla One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-$brand-subheadline-font: 'Montserrat', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-$brand-body-font:        'Vollkorn', Georgia, 'Times New Roman', Times, serif;
+$brand-display-font:     'Fjalla One', Impact,  'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+$brand-subheadline-font: 'Montserrat', Impact,  'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+$brand-body-font:        'Vollkorn',   Georgia, 'Times New Roman',  Times,               serif;
+$brand-default-font:     'Helvetica',  'Arial Narrow Bold',         serif;
+
+$brand-monolithic-font: 3rem;
+$brand-macro-font: 2.5rem;
+$brand-large-font: 2rem;
+$brand-standard-font: 1.5rem;
+$brand-small-font: 1.25rem;
+$brand-micro-font: 1rem;
+$brand-atomic-font: 0.75rem;
 
 /** Typography */
 @mixin brand-typography-headline {
   font-family: $brand-display-font;
+  color: $brand-black;
   text-transform: uppercase;
 }
 
@@ -32,4 +30,186 @@ $brand-body-font:        'Vollkorn', Georgia, 'Times New Roman', Times, serif;
 
 @mixin brand-typography-body {
   font-family: $brand-body-font;
+}
+
+/** Box Model  */
+$spacer: 3rem;
+$third-spacer: ($spacer/3);
+$half-spacer: ($spacer/2);
+$double-spacer: ($spacer*2);
+$triple-spacer: ($spacer*3);
+
+/** Colors */
+$brand-primary:           rgb(218, 41, 28);
+$brand-primary-transparent: rgba(218, 41, 28, 0.7);
+$brand-secondary:         rgba(151, 153, 155, 1);
+$brand-secondary-light:   rgba(208, 208, 206, 1);
+$brand-secondary-lighter: rgba(219, 219, 219, 1);
+$brand-secondary-dark:    rgba(99, 102, 106, 1);
+$brand-secondary-darker:  rgba(73, 73, 73, 1);
+$brand-black:             rgba(16, 24, 32, 1);
+$brand-black-soft:        rgba(25, 25, 25, 1);
+$brand-black-softer:      rgba(39, 39, 39, 1);
+$brand-white:             rgba(255, 255, 255, 1);
+$brand-white-soft:        rgba(244, 244, 244, 1);
+$brand-white-softer:      rgba(244, 244, 244, 1);
+
+// Colors
+$black:        $brand-black;
+$black-bis:    $brand-black-soft;
+$black-ter:    $brand-black-softer;
+
+$grey:         $brand-secondary;
+$grey-light:   $brand-secondary-light;
+$grey-lighter: $brand-secondary-lighter;
+$grey-dark:    $brand-secondary-dark;
+$grey-darker:  $brand-secondary-darker;
+
+$white:        $brand-white;
+$white-ter:    $brand-white-softer;
+$white-bis:    $brand-white-soft;
+
+$red:          $brand-primary;
+$orange:       rgb(255, 71, 15) !default;
+$yellow:       rgb(254, 221, 86) !default;
+$green:        rgb(35, 209, 96) !default;
+$turquoise:    rgb(0, 209, 177) !default;
+$cyan:         rgb(32, 155, 238) !default;
+$blue:         rgb(50, 115, 220) !default;
+$purple:       rgb(183, 107, 255) !default;
+
+// Typography
+$family-sans-serif: $brand-body-font;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+
+$size-1: $brand-monolithic-font;
+$size-2: $brand-macro-font;
+$size-3: $brand-large-font;
+$size-4: $brand-standard-font;
+$size-5: $brand-small-font;
+$size-6: $brand-micro-font;
+$size-7: $brand-atomic-font;
+
+$weight-light: 100 !default;
+$weight-normal: 300 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 700 !default;
+$weight-bold: 900 !default;
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 64px !default;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default;
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default;
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default;
+$widescreen-enabled: true !default;
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap) !default;
+$fullhd-enabled: true !default;
+
+// Miscellaneous
+
+$easing: ease-out !default;
+$radius-small: 2px !default;
+$radius: 4px !default;
+$radius-large: 6px !default;
+$radius-rounded: 290486px !default;
+$speed: 86ms !default;
+
+// Flags
+$variable-columns: true !default;
+
+$primary: $brand-primary;
+
+$info: $cyan !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $brand-black !default;
+
+$light: $brand-white-softer !default;
+$dark: $brand-black-softer !default;
+
+/** General colors */
+$background: $brand-white-softer !default;
+$border: $brand-secondary !default;
+$border-hover: $brand-secondary-light !default;
+
+// Text colors
+$text: $grey-dark !default;
+$text-light: $grey !default;
+$text-strong: $grey-darker !default;
+
+// Code colors
+$code: $red !default;
+$code-background: $background !default;
+$pre: $text !default;
+$pre-background: $background !default;
+
+/** Link colors */
+$link: $brand-primary !default;
+$link-visited: $brand-secondary-darker !default;
+$link-hover: $brand-black !default;
+$link-hover-border: $grey-light !default;
+$link-focus: $grey-darker !default;
+$link-focus-border: $blue !default;
+$link-active: $grey-darker !default;
+$link-active-border: $grey-dark !default;
+
+/** Typography */
+$family-primary: $family-sans-serif !default;
+$family-code: $family-monospace !default;
+
+$size-small: $size-5;
+$size-normal: $size-4;
+$size-medium: $size-3;
+$size-large: $size-2;
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;
+
+$body-background-color: $brand-white;
+$body-size: $half-spacer;
+$body-rendering: optimizeLegibility;
+$body-family: $brand-body-font;
+$body-color: $brand-black;
+$body-weight: $weight-normal;
+$body-line-height: 1.5;
+
+$code-family: $family-code;
+$code-padding: 0.25em 0.5em 0.25em;
+$code-weight: normal;
+$code-size: 0.875em;
+
+$hr-background-color: $background;
+$hr-height: 2px;
+$hr-margin: $half-spacer;
+
+$strong-color: $text-strong;
+$strong-weight: $weight-bold;
+
+$card-footer-border-top: 0 solid rgba(0, 0, 0, 0);
+
+@mixin animated($ms: 300ms) {
+  transition-property: all;
+  transition-duration: $ms;
+}
+
+@mixin ndn-overlay($bgColor, $bgOpacity) {
+  &::after {
+    @include animated(2s);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $bgColor;
+    opacity: $bgOpacity;
+    z-index: 0;
+  }
 }

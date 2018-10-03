@@ -1,0 +1,38 @@
+section.interlude {
+  @extend .section;
+
+  @include animated;
+  @include ndn-overlay($brand-black, 0.7);
+
+  position: relative;
+
+  &:hover {
+    @include animated;
+  }
+
+  .interlude-bounds {
+    @extend .container;
+  }
+
+  .poem {
+    @extend .column;
+
+    z-index: 1;
+    position: relative;
+  }
+
+  * {
+    color: $brand-white;
+    text-align: center;
+  }
+
+  h3 {
+    @extend .is-2;
+
+    font-weight: $weight-normal;
+  }
+
+  p {
+    font-size: $brand-micro-font;
+  }
+}

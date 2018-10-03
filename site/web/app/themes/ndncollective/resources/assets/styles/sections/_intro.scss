@@ -1,0 +1,66 @@
+section.intro {
+  @extend .section;
+
+  .intro-bounds {
+    @extend .container;
+  }
+
+  .text {
+    @extend .column;
+  }
+
+  .image {
+    @extend .column;
+
+    svg {
+      width: 80%;
+    }
+  }
+
+  @include mobile {
+    .image {
+      display: none;
+
+      svg {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 0 $half-spacer 0;
+      }
+    }
+
+    .text {
+      text-align: center;
+      padding-top: $half-spacer;
+
+      h2 {
+        font-size: 2rem !important;
+      }
+    }
+  }
+
+  @include tablet {
+    img {
+      padding: 0 14vw $half-spacer 0;
+    }
+
+    h2 {
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  h2 {
+    font-weight: $weight-normal;
+  }
+
+  p {
+    padding-bottom: $half-spacer;
+  }
+
+  button {
+    @extend .ndn-button;
+
+    font-size: 1rem !important;
+    margin-bottom: $half-spacer;
+  }
+}

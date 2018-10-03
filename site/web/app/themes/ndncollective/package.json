@@ -104,6 +104,10 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "animejs": "^2.2.0",
+    "bulma": "^0.7.1",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.3.1",
+    "scrollmagic": "^2.0.5"
   }
 }
