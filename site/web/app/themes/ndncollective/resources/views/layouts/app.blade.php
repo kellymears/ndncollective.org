@@ -38,16 +38,22 @@
       @elseif ( is_page ( 'while-indigenous' ) )
         @yield ( 'content' )
         @yield ( 'more' )
+      
+      @elseif ( is_page ( 'stories' ) )
+        @yield ( 'content' )
+        @yield ( 'more' )
+        @include ( 'partials.sections.intro' )
+        @yield ( 'podcast' )
 
       @elseif  ( is_page () )
         @yield ( 'content' )
-        @yield ( 'intro' )
+        @include ( 'partials.sections.intro' )
         @yield ( 'more' )
         @yield ( 'podcast' )
 
       @elseif ( is_single () )
         @yield ( 'content' )
-        @yield ( 'intro' )
+        @include ( 'partials.sections.intro' )
         @yield ( 'more' )
         @yield ( 'podcast' )
 
